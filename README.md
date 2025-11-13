@@ -15,8 +15,8 @@ Questo documento descrive il flusso di lavoro Git/GitHub che adottiamo per mante
 Apri il terminale sul tuo computer e scarica una copia locale del progetto:
 
 ```bash
-git clone https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository
-cd nome-del-tuo-progetto
+git clone https://github.com/danieledisint/Progetto_ML
+cd Progetto_ML
 ```
 
 ### Passo 2: Creare un Branch di Lavoro
@@ -59,7 +59,7 @@ git push origin nome-del-tuo-branch
 
 Una volta che il tuo codice è pronto per essere unito al branch `main`:
 
-1.  Vai sul [repository GitHub](https://www.google.com/search?q=https://github.com/tuo-utente/nome-del-progetto).
+1.  Vai sul [repository GitHub](https://github.com/danieledisint/Progetto_ML).
 2.  GitHub ti avviserà che è stato caricato un nuovo branch e ti chiederà di **"Open a Pull Request"**.
 3.  **Completa i dettagli della PR:**
       * **Titolo:** Deve spiegare cosa fa la modifica.
