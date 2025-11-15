@@ -37,7 +37,7 @@ Prima di iniziare a lavorare, assicurati che il tuo branch sia allineato con il 
     ```
 3.  Torna al tuo branch di lavoro e incorpora le modifiche:
     ```bash
-    git checkout <nome-tuo-branch>
+    git checkout <il-tuo-nome>
     git merge main
     ```
 
@@ -53,7 +53,7 @@ Alla fine della giornata o quando completi una fase di lavoro:
 
 1.  **Aggiungi le Modifiche:** Aggiungi il tuo Notebook e qualsiasi altro file modificato all'area di staging.
     ```bash
-    git add section*.ipynb
+    git add code/section*.ipynb
     ```
     *Suggerimento: Usa `git add .` se sei sicuro di voler includere tutte le modifiche.*
 2.  **Crea il Commit:** Salva le modifiche localmente con un messaggio chiaro.
