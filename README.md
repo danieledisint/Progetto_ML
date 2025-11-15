@@ -1,94 +1,84 @@
-## 📚 Guida alla Contribuzione al Progetto
+# 🤖 Project ML | Guida per il Team
 
-Questo documento descrive il flusso di lavoro Git/GitHub che adottiamo per mantenere il codice organizzato e collaborare in modo efficiente.
+Benvenuti nel repository del nostro progetto di Machine Learning.
 
-### 📌 Regole Fondamentali
+Questa guida rapida e sintetica copre il flusso di lavoro essenziale per lo sviluppo collaborativo utilizzando Git e Jupyter Notebooks.
 
-1.  **Non lavorare mai direttamente sul branch `main`**.
-2.  Ogni nuova funzionalità o correzione di bug deve avere il suo **branch dedicato**.
-3.  Usa sempre le **Pull Request (PR)** per proporre modifiche.
+## 📌 Flusso di Lavoro Semplice (Focus sul Notebook)
 
------
+L'obiettivo è lavorare in isolamento sul proprio Notebook Jupyter (chiamato `section*.ipynb`) e integrare le modifiche solo alla fine del ciclo di sviluppo.
 
-### Passo 1: Clonare il Repository (Solo la Prima Volta)
+### 1. Preparazione Iniziale (Solo la prima volta)
 
-Apri il terminale sul tuo computer e scarica una copia locale del progetto:
-
-```bash
-git clone https://github.com/danieledisint/Progetto_ML
-cd Progetto_ML
-```
-
-### Passo 2: Creare un Branch di Lavoro
-
-Prima di iniziare una nuova attività (funzione o bugfix), crea un nuovo branch. Usa un nome descrittivo (es. `feature/aggiungi-login` o `fix/risolvi-errore-sidebar`).
-
-1.  Assicurati di essere sul branch principale e aggiornalo:
+1.  **Clona il Repository:** Apri il terminale e clona il progetto.
     ```bash
-    git checkout main
-    git pull origin main
+    git clone [https://github.com/danieledisint/Progetto_ML.git](https://github.com/danieledisint/Progetto_ML.git)
+    cd Progetto_ML
     ```
-2.  Crea e passa al tuo nuovo branch:
+2.  **Crea il tuo Branch Personale:** Crea un nuovo branch con il tuo nome per isolare il tuo lavoro.
     ```bash
-    git checkout -b nome-del-tuo-branch
+    git checkout -b <il-tuo-nome>
     ```
+    *(Esempio: `git checkout -b daniele`)*
 
-### Passo 3: Lavorare e Committare le Modifiche
+### 2. Sviluppo Quotidiano
 
-Lavora sui file del progetto. Quando hai completato una parte significativa o un'intera funzionalità:
+#### A. Inizio Sessione (Sincronizzazione)
 
-1.  **Aggiungi i file modificati** all'area di staging:
-    ```bash
-    git add .
-    ```
-2.  **Salva la modifica** (commit) con un messaggio chiaro e conciso:
-    ```bash
-    git commit -m "feat: Aggiunta logica di controllo utenti nel modulo X"
-    ```
-    *(Consiglio: usa prefissi come `feat:` per nuove funzionalità, `fix:` per correzioni di bug, `docs:` per documentazione.)*
+Prima di iniziare a lavorare, assicurati che il tuo branch sia allineato con il branch principale (`main` o `master`).
 
-### Passo 4: Spingere (Push) le Modifiche su GitHub
-
-Carica il tuo branch locale sul repository remoto:
-
-```bash
-git push origin nome-del-tuo-branch
-```
-
-### Passo 5: Aprire una Pull Request (PR)
-
-Una volta che il tuo codice è pronto per essere unito al branch `main`:
-
-1.  Vai sul [repository GitHub](https://github.com/danieledisint/Progetto_ML).
-2.  GitHub ti avviserà che è stato caricato un nuovo branch e ti chiederà di **"Open a Pull Request"**.
-3.  **Completa i dettagli della PR:**
-      * **Titolo:** Deve spiegare cosa fa la modifica.
-      * **Descrizione:** Spiega il contesto, le scelte fatte e i ticket (Issues) che risolve.
-4.  Assegna la PR a un collega per la **Code Review** (revisione del codice).
-
-### Passo 6: Revisione e Unione (Merge)
-
-1.  Un collega rivedrà il tuo codice sulla PR. Potrebbe chiedere modifiche.
-2.  Se sono necessarie modifiche, torna al **Passo 3** (lavori, committi e fai un altro `git push`). Le modifiche appariranno automaticamente sulla PR.
-3.  Una volta approvata, la PR verrà unita (merged) nel branch `main`.
-
-### Passo 7: Pulizia
-
-Dopo che la PR è stata unita:
-
-1.  Torna al branch `main`:
+1.  Passa al branch principale:
     ```bash
     git checkout main
     ```
-2.  Aggiorna la copia locale:
+2.  Aggiorna il branch principale con le ultime modifiche remote:
     ```bash
     git pull origin main
     ```
-3.  Cancella il branch di lavoro (non è più necessario):
+3.  Torna al tuo branch di lavoro e incorpora le modifiche:
     ```bash
-    git branch -d nome-del-tuo-branch
+    git checkout <nome-tuo-branch>
+    git merge main
     ```
 
------
+#### B. Lavoro sul Notebook
 
-Seguendo questo flusso, eviteremo sovrascritture accidentali e manterremo una cronologia pulita e verificata del progetto\!
+1.  Apri il tuo **Notebook Jupyter** e lavora sul codice e sull'analisi.
+    *(È consigliato che ognuno lavori sul proprio file `.ipynb` per minimizzare i conflitti, ad esempio `section1.ipynb`)*
+2.  Salva regolarmente il tuo Notebook.
+
+### 3. Salvare e Pubblicare il Lavoro
+
+Alla fine della giornata o quando completi una fase di lavoro:
+
+1.  **Aggiungi le Modifiche:** Aggiungi il tuo Notebook e qualsiasi altro file modificato all'area di staging.
+    ```bash
+    git add section*.ipynb
+    ```
+    *Suggerimento: Usa `git add .` se sei sicuro di voler includere tutte le modifiche.*
+2.  **Crea il Commit:** Salva le modifiche localmente con un messaggio chiaro.
+    ```bash
+    git commit -m "Descrizione sintetica del lavoro svolto oggi/della feature completata"
+    ```
+3.  **Pubblica su GitHub:** Invia il commit al tuo branch remoto su GitHub.
+    ```bash
+    git push origin <il-tuo-nome>
+    ```
+
+### 4. Richiesta di Revisione (Integrazione)
+
+Quando il tuo codice è pronto per essere unito al branch principale (`main`), apri una **Pull Request (PR)**:
+
+* Vai alla pagina del repository su GitHub.
+* Dovresti vedere un pulsante **"Compare & pull request"**.
+* Seleziona come base il branch **`main`** e come sorgente il tuo **`<nome-tuo-branch>`**.
+* Aggiungi un titolo e una descrizione chiari e assegna i revisori (il resto del team).
+
+---
+## 🛠️ Regole Chiave per i Notebook Jupyter
+
+* **Evita i Commit con Output Ponderoso:** Per mantenere i file `.ipynb` snelli e veloci da revisionare, **pulisci sempre gli output** (grafici, grandi dataframe) prima di committare.
+    * *Jupyter: `Kernel` > `Restart & Clear Output`*
+* **Gestione dei Conflitti:** Se Git segnala un conflitto (`CONFLICT`), parlane subito con il team. I conflitti nei file `.ipynb` sono difficili da risolvere manualmente.
+
+---
