@@ -12,7 +12,7 @@ L'obiettivo è lavorare in isolamento sul proprio Notebook Jupyter (chiamato `se
 
 1.  **Clona il Repository:** Apri il terminale e clona il progetto.
     ```bash
-    git clone [https://github.com/danieledisint/Progetto_ML.git](https://github.com/danieledisint/Progetto_ML.git)
+    git clone https://github.com/danieledisint/Progetto_ML.git
     cd Progetto_ML
     ```
 2.  **Crea il tuo Branch Personale:** Crea un nuovo branch con il tuo nome per isolare il tuo lavoro.
